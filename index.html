@@ -27,6 +27,12 @@
     <button class="hamburger" id="hamburger">☰</button>
   </header>
 
+  <!-- IMAGE LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Visual cheat sheet"/>
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  </div>
+
   <!-- MAIN CONTENT -->
   <main id="mainContent">
 
@@ -39,6 +45,18 @@
       </div>
 
       <div class="panel-grid">
+        <!-- Visual Cheat Sheet (from slides) -->
+        <div class="card full-width visual-sheet-card l1-sheet">
+          <div class="visual-sheet-header">
+            <div>
+              <h2 class="card-title" style="margin-bottom:4px">🖼️ Visual Summary — from course slides</h2>
+              <p style="font-size:0.8rem;color:var(--text-muted)">Click the image to zoom in full screen</p>
+            </div>
+          </div>
+          <img src="assets/cheatsheet-l1.png" alt="L1 Visual Cheat Sheet"
+               class="visual-sheet-img" onclick="openLightbox(this.src)"/>
+        </div>
+
         <!-- Concept Map -->
         <div class="card full-width">
           <h2 class="card-title">🗺️ Concept Map</h2>
@@ -47,7 +65,7 @@
 
         <!-- Cheat Sheet flashcards -->
         <div class="card full-width">
-          <h2 class="card-title">📄 Cheat Sheet — Lecture Notes</h2>
+          <h2 class="card-title">📄 Lecture Notes — flip to reveal</h2>
           <div class="flashcard-strip" id="l1-flashcards"></div>
         </div>
 
@@ -79,12 +97,22 @@
         <p class="subtitle">BFS, DFS, UCS, Greedy, A* · h_max · h_add</p>
       </div>
       <div class="panel-grid">
+        <div class="card full-width visual-sheet-card l2-sheet">
+          <div class="visual-sheet-header">
+            <div>
+              <h2 class="card-title" style="margin-bottom:4px">🖼️ Visual Summary — from course slides</h2>
+              <p style="font-size:0.8rem;color:var(--text-muted)">Click the image to zoom in full screen</p>
+            </div>
+          </div>
+          <img src="assets/cheatsheet-l2.png" alt="L2 Visual Cheat Sheet"
+               class="visual-sheet-img" onclick="openLightbox(this.src)"/>
+        </div>
         <div class="card full-width">
           <h2 class="card-title">🗺️ Concept Map</h2>
           <div class="concept-map l2-map" id="l2-map"></div>
         </div>
         <div class="card full-width">
-          <h2 class="card-title">📄 Cheat Sheet — Lecture Notes</h2>
+          <h2 class="card-title">📄 Lecture Notes — flip to reveal</h2>
           <div class="flashcard-strip" id="l2-flashcards"></div>
         </div>
         <div class="card">
@@ -110,12 +138,22 @@
         <p class="subtitle">Partial plans · causal links · threats · POP</p>
       </div>
       <div class="panel-grid">
+        <div class="card full-width visual-sheet-card l3-sheet">
+          <div class="visual-sheet-header">
+            <div>
+              <h2 class="card-title" style="margin-bottom:4px">🖼️ Visual Summary — from course slides</h2>
+              <p style="font-size:0.8rem;color:var(--text-muted)">Click the image to zoom in full screen</p>
+            </div>
+          </div>
+          <img src="assets/cheatsheet-l3.png" alt="L3 Visual Cheat Sheet"
+               class="visual-sheet-img" onclick="openLightbox(this.src)"/>
+        </div>
         <div class="card full-width">
           <h2 class="card-title">🗺️ Concept Map</h2>
           <div class="concept-map l3-map" id="l3-map"></div>
         </div>
         <div class="card full-width">
-          <h2 class="card-title">📄 Cheat Sheet — Lecture Notes</h2>
+          <h2 class="card-title">📄 Lecture Notes — flip to reveal</h2>
           <div class="flashcard-strip" id="l3-flashcards"></div>
         </div>
         <div class="card">
@@ -141,12 +179,22 @@
         <p class="subtitle">Layered graph · mutex · level-sum · max-level</p>
       </div>
       <div class="panel-grid">
+        <div class="card full-width visual-sheet-card l4-sheet">
+          <div class="visual-sheet-header">
+            <div>
+              <h2 class="card-title" style="margin-bottom:4px">🖼️ Visual Summary — from course slides</h2>
+              <p style="font-size:0.8rem;color:var(--text-muted)">Click the image to zoom in full screen</p>
+            </div>
+          </div>
+          <img src="assets/cheatsheet-l4.png" alt="L4 Visual Cheat Sheet"
+               class="visual-sheet-img" onclick="openLightbox(this.src)"/>
+        </div>
         <div class="card full-width">
           <h2 class="card-title">🗺️ Concept Map</h2>
           <div class="concept-map l4-map" id="l4-map"></div>
         </div>
         <div class="card full-width">
-          <h2 class="card-title">📄 Cheat Sheet — Lecture Notes</h2>
+          <h2 class="card-title">📄 Lecture Notes — flip to reveal</h2>
           <div class="flashcard-strip" id="l4-flashcards"></div>
         </div>
         <div class="card">
@@ -172,12 +220,22 @@
         <p class="subtitle">Value iteration · Q-values · POMDP beliefs</p>
       </div>
       <div class="panel-grid">
+        <div class="card full-width visual-sheet-card l5-sheet">
+          <div class="visual-sheet-header">
+            <div>
+              <h2 class="card-title" style="margin-bottom:4px">🖼️ Visual Summary — from course slides</h2>
+              <p style="font-size:0.8rem;color:var(--text-muted)">Click the image to zoom in full screen</p>
+            </div>
+          </div>
+          <img src="assets/cheatsheet-l5.png" alt="L5 Visual Cheat Sheet"
+               class="visual-sheet-img" onclick="openLightbox(this.src)"/>
+        </div>
         <div class="card full-width">
           <h2 class="card-title">🗺️ Concept Map</h2>
           <div class="concept-map l5-map" id="l5-map"></div>
         </div>
         <div class="card full-width">
-          <h2 class="card-title">📄 Cheat Sheet — Lecture Notes</h2>
+          <h2 class="card-title">📄 Lecture Notes — flip to reveal</h2>
           <div class="flashcard-strip" id="l5-flashcards"></div>
         </div>
         <div class="card">
@@ -221,5 +279,19 @@
   <script src="js/app.js"></script>
   <script src="js/widgets.js"></script>
   <script src="js/quiz.js"></script>
+
+  <script>
+    // Lightbox
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  </script>
 </body>
 </html>
