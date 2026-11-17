@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PAR Exam Study App</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <!-- KaTeX for math rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+</head>
+<body>
+  <!-- TOP NAV -->
+  <header class="topbar">
+    <div class="logo">🧠 PAR Study</div>
+    <nav class="tabs" id="mainTabs">
+      <button class="tab-btn active" data-tab="l1">📦 L1 Classical</button>
+      <button class="tab-btn" data-tab="l2">🔍 L2 Search</button>
+      <button class="tab-btn" data-tab="l3">🔗 L3 Plan-Space</button>
+      <button class="tab-btn" data-tab="l4">🏢 L4 Graphplan</button>
+      <button class="tab-btn" data-tab="l5">🎲 L5 MDPs</button>
+      <button class="tab-btn tab-exam" data-tab="exam">📝 Practice Exam</button>
+      <button class="tab-btn tab-cheat" data-tab="cheat">📋 Cheat Sheet</button>
+    </nav>
+    <button class="hamburger" id="hamburger">☰</button>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="mainContent">
+
+    <!-- ===== L1 ===== -->
+    <section class="tab-panel active l1" id="tab-l1">
+      <div class="lecture-hero l1-bg">
+        <span class="lecture-num">L1</span>
+        <h1>Classical Planning &amp; PDDL</h1>
+        <p class="subtitle">State-transition systems, STRIPS, Blocks World</p>
+      </div>
+
+      <div class="panel-grid">
+        <!-- Concept Map -->
+        <div class="card full-width">
+          <h2 class="card-title">🗺️ Concept Map</h2>
+          <div class="concept-map l1-map" id="l1-map"></div>
+        </div>
+
+        <!-- Cheat Sheet flashcards -->
+        <div class="card full-width">
+          <h2 class="card-title">📄 Cheat Sheet — Lecture Notes</h2>
+          <div class="flashcard-strip" id="l1-flashcards"></div>
+        </div>
+
+        <!-- Formula Cards -->
+        <div class="card">
+          <h2 class="card-title">🧮 Key Formulas</h2>
+          <div id="l1-formulas"></div>
+        </div>
+
+        <!-- Traps -->
+        <div class="card traps-card">
+          <h2 class="card-title">⚠️ Classic Traps</h2>
+          <div id="l1-traps"></div>
+        </div>
+
+        <!-- Widget -->
+        <div class="card full-width">
+          <h2 class="card-title">🧱 Interactive: Blocks World</h2>
+          <div id="widget-l1"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== L2 ===== -->
+    <section class="tab-panel l2" id="tab-l2">
+      <div class="lecture-hero l2-bg">
+        <span class="lecture-num">L2</span>
+        <h1>Search &amp; Heuristics</h1>
+        <p class="subtitle">BFS, DFS, UCS, Greedy, A* · h_max · h_add</p>
+      </div>
+      <div class="panel-grid">
+        <div class="card full-width">
+          <h2 class="card-title">🗺️ Concept Map</h2>
+          <div class="concept-map l2-map" id="l2-map"></div>
+        </div>
+        <div class="card full-width">
+          <h2 class="card-title">📄 Cheat Sheet — Lecture Notes</h2>
+          <div class="flashcard-strip" id="l2-flashcards"></div>
+        </div>
+        <div class="card">
+          <h2 class="card-title">🧮 Key Formulas</h2>
+          <div id="l2-formulas"></div>
+        </div>
+        <div class="card traps-card">
+          <h2 class="card-title">⚠️ Classic Traps</h2>
+          <div id="l2-traps"></div>
+        </div>
+        <div class="card full-width">
+          <h2 class="card-title">🔍 Interactive: A* Playground</h2>
+          <div id="widget-l2"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== L3 ===== -->
+    <section class="tab-panel l3" id="tab-l3">
+      <div class="lecture-hero l3-bg">
+        <span class="lecture-num">L3</span>
+        <h1>Plan-Space &amp; HTN</h1>
+        <p class="subtitle">Partial plans · causal links · threats · POP</p>
+      </div>
+      <div class="panel-grid">
+        <div class="card full-width">
+          <h2 class="card-title">🗺️ Concept Map</h2>
+          <div class="concept-map l3-map" id="l3-map"></div>
+        </div>
+        <div class="card full-width">
+          <h2 class="card-title">📄 Cheat Sheet — Lecture Notes</h2>
+          <div class="flashcard-strip" id="l3-flashcards"></div>
+        </div>
+        <div class="card">
+          <h2 class="card-title">🧮 Key Formulas</h2>
+          <div id="l3-formulas"></div>
+        </div>
+        <div class="card traps-card">
+          <h2 class="card-title">⚠️ Classic Traps</h2>
+          <div id="l3-traps"></div>
+        </div>
+        <div class="card full-width">
+          <h2 class="card-title">🔗 Interactive: Threat Visualiser</h2>
+          <div id="widget-l3"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== L4 ===== -->
+    <section class="tab-panel l4" id="tab-l4">
+      <div class="lecture-hero l4-bg">
+        <span class="lecture-num">L4</span>
+        <h1>Graphplan &amp; Heuristics</h1>
+        <p class="subtitle">Layered graph · mutex · level-sum · max-level</p>
+      </div>
+      <div class="panel-grid">
+        <div class="card full-width">
+          <h2 class="card-title">🗺️ Concept Map</h2>
+          <div class="concept-map l4-map" id="l4-map"></div>
+        </div>
+        <div class="card full-width">
+          <h2 class="card-title">📄 Cheat Sheet — Lecture Notes</h2>
+          <div class="flashcard-strip" id="l4-flashcards"></div>
+        </div>
+        <div class="card">
+          <h2 class="card-title">🧮 Key Formulas</h2>
+          <div id="l4-formulas"></div>
+        </div>
+        <div class="card traps-card">
+          <h2 class="card-title">⚠️ Classic Traps</h2>
+          <div id="l4-traps"></div>
+        </div>
+        <div class="card full-width">
+          <h2 class="card-title">🏢 Interactive: Graphplan Stepper</h2>
+          <div id="widget-l4"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== L5 ===== -->
+    <section class="tab-panel l5" id="tab-l5">
+      <div class="lecture-hero l5-bg">
+        <span class="lecture-num">L5</span>
+        <h1>MDPs &amp; Uncertainty</h1>
+        <p class="subtitle">Value iteration · Q-values · POMDP beliefs</p>
+      </div>
+      <div class="panel-grid">
+        <div class="card full-width">
+          <h2 class="card-title">🗺️ Concept Map</h2>
+          <div class="concept-map l5-map" id="l5-map"></div>
+        </div>
+        <div class="card full-width">
+          <h2 class="card-title">📄 Cheat Sheet — Lecture Notes</h2>
+          <div class="flashcard-strip" id="l5-flashcards"></div>
+        </div>
+        <div class="card">
+          <h2 class="card-title">🧮 Key Formulas</h2>
+          <div id="l5-formulas"></div>
+        </div>
+        <div class="card traps-card">
+          <h2 class="card-title">⚠️ Classic Traps</h2>
+          <div id="l5-traps"></div>
+        </div>
+        <div class="card full-width">
+          <h2 class="card-title">🎲 Interactive: 4×3 Grid World</h2>
+          <div id="widget-l5"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRACTICE EXAM ===== -->
+    <section class="tab-panel" id="tab-exam">
+      <div class="lecture-hero exam-bg">
+        <span class="lecture-num">📝</span>
+        <h1>Practice Exam</h1>
+        <p class="subtitle">2 h · 10 T/F (×0.4) + 10 MC (×0.6) · no negative marking</p>
+      </div>
+      <div id="exam-container"></div>
+    </section>
+
+    <!-- ===== CHEAT SHEET ===== -->
+    <section class="tab-panel" id="tab-cheat">
+      <div class="lecture-hero cheat-bg">
+        <span class="lecture-num">📋</span>
+        <h1>The 10 Confusing Pairs</h1>
+        <p class="subtitle">The most common exam traps — memorise these</p>
+      </div>
+      <div id="cheat-container"></div>
+    </section>
+
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/widgets.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>
