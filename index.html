@@ -22,6 +22,7 @@
       <button class="tab-btn" data-tab="l4">🏢 L4 Graphplan</button>
       <button class="tab-btn" data-tab="l5">🎲 L5 MDPs</button>
       <button class="tab-btn tab-exam" data-tab="exam">📝 Practice Exam</button>
+      <button class="tab-btn tab-bank" data-tab="bank">🏦 Full Bank</button>
       <button class="tab-btn tab-cheat" data-tab="cheat">📋 Cheat Sheet</button>
     </nav>
     <button class="hamburger" id="hamburger">☰</button>
@@ -263,6 +264,16 @@
       <div id="exam-container"></div>
     </section>
 
+    <!-- ===== FULL BANK ===== -->
+    <section class="tab-panel" id="tab-bank">
+      <div class="lecture-hero" style="background:linear-gradient(135deg,#1a1a2e 0%,#0f0f1a 100%);border-bottom:2px solid #818cf8">
+        <span class="lecture-num" style="opacity:.2">🏦</span>
+        <h1>Full Question Bank</h1>
+        <p class="subtitle">63 questions · L1–L5 · filter by lecture &amp; difficulty · ⭐ = hot/important</p>
+      </div>
+      <div id="bank-container"></div>
+    </section>
+
     <!-- ===== CHEAT SHEET ===== -->
     <section class="tab-panel" id="tab-cheat">
       <div class="lecture-hero cheat-bg">
@@ -279,6 +290,7 @@
   <script src="js/app.js"></script>
   <script src="js/widgets.js"></script>
   <script src="js/quiz.js"></script>
+  <script src="js/bank.js"></script>
 
   <script>
     // Lightbox

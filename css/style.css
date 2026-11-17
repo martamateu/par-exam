@@ -753,6 +753,112 @@ body {
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
 
+/* ---- FULL BANK TAB ---- */
+.tab-bank { color: #818cf8 !important; }
+#mainTabs [data-tab="bank"].active { color: #a5b4fc; border-color: #818cf8; }
+
+.bank-filters {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  padding: 16px 24px 8px;
+}
+.filter-btn {
+  padding: 5px 14px; border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--surface2); color: var(--text-muted);
+  cursor: pointer; font-size: 0.78rem; font-weight: 600;
+  transition: var(--transition);
+}
+.filter-btn:hover, .filter-btn.active { background: var(--surface); color: var(--text); border-color: #818cf8; }
+.filter-btn.f-l1.active { border-color:var(--l1); color:var(--l1-light); }
+.filter-btn.f-l2.active { border-color:var(--l2); color:var(--l2-light); }
+.filter-btn.f-l3.active { border-color:var(--l3); color:var(--l3-light); }
+.filter-btn.f-l4.active { border-color:var(--l4); color:var(--l4-light); }
+.filter-btn.f-l5.active { border-color:var(--l5); color:var(--l5-light); }
+.filter-btn.f-hard.active { border-color:#ef4444; color:#fca5a5; }
+.filter-btn.f-hot.active  { border-color:#fbbf24; color:#fde68a; }
+
+.bank-stats {
+  padding: 4px 24px 12px;
+  font-size: 0.8rem; color: var(--text-muted);
+}
+
+.bank-grid {
+  padding: 0 24px 32px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+
+.bank-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: var(--transition);
+}
+.bank-card:hover { border-color: #818cf844; }
+.bank-card.hidden { display: none; }
+
+.bank-card-header {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 18px;
+  cursor: pointer;
+  user-select: none;
+}
+.bank-card-header:hover { background: var(--surface2); }
+
+.bank-q-id {
+  font-size: 0.7rem; font-weight: 800;
+  padding: 2px 7px; border-radius: 4px;
+  background: var(--bg3); color: var(--text-muted);
+  white-space: nowrap; flex-shrink: 0;
+}
+.badge-diff {
+  font-size: 0.68rem; font-weight: 800;
+  padding: 2px 7px; border-radius: 4px;
+  flex-shrink: 0;
+}
+.badge-hot {
+  font-size: 0.75rem; flex-shrink: 0;
+}
+.bank-q-text {
+  flex: 1; font-size: 0.9rem; line-height: 1.4;
+}
+.bank-toggle {
+  font-size: 0.75rem; color: var(--text-dim);
+  flex-shrink: 0; transition: var(--transition);
+}
+.bank-card.open .bank-toggle { transform: rotate(180deg); }
+
+.bank-card-body {
+  display: none;
+  padding: 0 18px 16px;
+  border-top: 1px solid var(--border);
+}
+.bank-card.open .bank-card-body { display: block; }
+
+.bank-options { margin: 10px 0; display: flex; flex-direction: column; gap: 6px; }
+.bank-opt {
+  padding: 7px 12px; border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg3);
+  font-size: 0.84rem;
+  display: flex; gap: 8px;
+}
+.bank-opt.correct-opt { border-color: var(--l2); background: rgba(34,197,94,0.1); }
+.bank-opt.wrong-opt   { border-color: var(--l5); background: rgba(239,68,68,0.08); opacity:.7; }
+
+.bank-answer-row {
+  display: flex; align-items: flex-start; gap: 10px;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--bg3);
+  border-left: 3px solid var(--l2);
+  font-size: 0.84rem; line-height: 1.5;
+}
+.bank-answer-tf {
+  font-size: 1.1rem; font-weight: 800;
+}
+
 /* ---- VISUAL CHEAT SHEET IMAGE CARDS ---- */
 .visual-sheet-card {
   padding: 20px;
